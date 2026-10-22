@@ -1,0 +1,769 @@
+{
+  "info": {
+    "_postman_id": "b1a2c3d4-e5f6-7890-abcd-ef0123456789",
+    "name": "Automated Land Valuation System - Midterm Examination",
+    "description": "Postman Collection for AUCA INSY 8322 Web Technology and Internet Midterm Project by Niyonshimira Jean Marie (ID: 27197).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Step 0 - Seed Data",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/seed",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "seed"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Part A",
+      "item": [
+        {
+          "name": "A2 - Save Property Type",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Commercial High Density\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/property-types/save",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "property-types", "save"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get All Property Types",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/property-types/all",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "property-types", "all"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get Property Type by ID (404 Not Found)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/property-types/00000000-0000-0000-0000-000000000000",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "property-types", "00000000-0000-0000-0000-000000000000"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Save District Office",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"officeNumber\": 5,\n  \"name\": \"Bugesera District Office\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/district-offices/save",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "district-offices", "save"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get All District Offices",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/district-offices/all",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "district-offices", "all"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Save Valuer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Innocent\",\n  \"lastName\": \"Nsengiyumva\",\n  \"licenseNumber\": \"VAL-004\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/valuers/save",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuers", "save"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get All Valuers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/valuers/all",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuers", "all"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Save Landowner",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Alexis\",\n  \"lastName\": \"Kagabo\",\n  \"nationalId\": \"1199580098765432\",\n  \"phone\": \"0788999888\",\n  \"email\": \"alexis.kagabo@example.com\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/landowners/save",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "landowners", "save"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get All Landowners",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/landowners/all",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "landowners", "all"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "A2 - Get All Valuation Requests",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/valuation-requests/all",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuation-requests", "all"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Part B",
+      "item": [
+        {
+          "name": "B1 - Find landowners by lastName",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/landowners/by-last-name?lastName=niyonsaba",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "landowners", "by-last-name"],
+              "query": [
+                {
+                  "key": "lastName",
+                  "value": "niyonsaba"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "B2 - Valuation requests by status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/valuation-requests/by-status?status=SUBMITTED",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuation-requests", "by-status"],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "SUBMITTED"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "B3 - Valuation requests in a date range",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/valuation-requests/between?start=2026-10-01&end=2026-10-31",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuation-requests", "between"],
+              "query": [
+                {
+                  "key": "start",
+                  "value": "2026-10-01"
+                },
+                {
+                  "key": "end",
+                  "value": "2026-10-31"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Part C",
+      "item": [
+        {
+          "name": "C1 - Valuers by property type",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/valuers/by-property-type?name=resid",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuers", "by-property-type"],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "resid"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "C2 - Free district offices",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/district-offices/free",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "district-offices", "free"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "C3 - Property types nobody holds",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/property-types/unused",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "property-types", "unused"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "C4 - Landowners of a valuer",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/landowners/of-valuer/f2dcdb95-a64b-4715-86ea-72a403fd777b",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "landowners", "of-valuer", "f2dcdb95-a64b-4715-86ea-72a403fd777b"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "C4 - Landowners of a valuer (404 Not Found)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/landowners/of-valuer/00000000-0000-0000-0000-000000000000",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "landowners", "of-valuer", "00000000-0000-0000-0000-000000000000"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Part D",
+      "item": [
+        {
+          "name": "D1 - Safe saving (201 Created)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"requestDate\": \"2026-11-20\",\n  \"status\": \"VALUED\",\n  \"upi\": \"1/01/01/01/888\",\n  \"areaSqm\": 550.0\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/valuation-requests/save",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuation-requests", "save"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D1 - Safe saving (400 Date in the past)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"requestDate\": \"2025-01-01\",\n  \"status\": \"SUBMITTED\",\n  \"upi\": \"1/01/01/01/999\",\n  \"areaSqm\": 400.0\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/valuation-requests/save",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuation-requests", "save"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D1 - Safe saving (409 Valuer already has request)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"requestDate\": \"2026-10-20\",\n  \"status\": \"SUBMITTED\",\n  \"upi\": \"1/01/01/01/777\",\n  \"areaSqm\": 350.0,\n  \"valuer\": {\n    \"id\": \"f2dcdb95-a64b-4715-86ea-72a403fd777b\"\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/valuation-requests/save",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuation-requests", "save"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D2 - Status flow (200 OK)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/valuation-requests/902781b2-1324-4f80-87a3-b4618a38ec90/status?status=VERIFIED",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuation-requests", "902781b2-1324-4f80-87a3-b4618a38ec90", "status"],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "VERIFIED"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D2 - Status flow (400 Cannot change status)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/valuation-requests/fbf68038-f9b8-450f-90e0-c3d38ee5903b/status?status=SUBMITTED",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuation-requests", "fbf68038-f9b8-450f-90e0-c3d38ee5903b", "status"],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "SUBMITTED"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D3 - Add property type to valuer (200 OK)",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/valuers/f2dcdb95-a64b-4715-86ea-72a403fd777b/property-types/660cbafe-9195-4fb8-8c1d-15794695b2bc",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuers", "f2dcdb95-a64b-4715-86ea-72a403fd777b", "property-types", "660cbafe-9195-4fb8-8c1d-15794695b2bc"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D3 - Add property type to valuer (409 Already has)",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/valuers/f2dcdb95-a64b-4715-86ea-72a403fd777b/property-types/3ef40032-efaa-4fa6-a36c-92c23a7bbba2",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuers", "f2dcdb95-a64b-4715-86ea-72a403fd777b", "property-types", "3ef40032-efaa-4fa6-a36c-92c23a7bbba2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D4 - Move valuer to district office (200 OK)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/valuers/f2dcdb95-a64b-4715-86ea-72a403fd777b/district-office?officeNumber=4",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuers", "f2dcdb95-a64b-4715-86ea-72a403fd777b", "district-office"],
+              "query": [
+                {
+                  "key": "officeNumber",
+                  "value": "4"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D4 - Move valuer to district office (409 Taken)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/valuers/f2dcdb95-a64b-4715-86ea-72a403fd777b/district-office?officeNumber=2",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuers", "f2dcdb95-a64b-4715-86ea-72a403fd777b", "district-office"],
+              "query": [
+                {
+                  "key": "officeNumber",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Part E",
+      "item": [
+        {
+          "name": "E1 - Write a valuation factor (201 Created)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"factorName\": \"Proximity to commercial center\",\n  \"comment\": \"Located 150m from market square\",\n  \"score\": 8\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/valuation-factors/save?valuationRequestId=fbf68038-f9b8-450f-90e0-c3d38ee5903b",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuation-factors", "save"],
+              "query": [
+                {
+                  "key": "valuationRequestId",
+                  "value": "fbf68038-f9b8-450f-90e0-c3d38ee5903b"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "E1 - Write valuation factor (400 Not VALUED request)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"factorName\": \"Drainage system\",\n  \"comment\": \"Well maintained rainwater channel\",\n  \"score\": 7\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/valuation-factors/save?valuationRequestId=902781b2-1324-4f80-87a3-b4618a38ec90",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuation-factors", "save"],
+              "query": [
+                {
+                  "key": "valuationRequestId",
+                  "value": "902781b2-1324-4f80-87a3-b4618a38ec90"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "E2 - Valuation factor history of a landowner",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/valuation-factors/landowner/1198070023456789",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuation-factors", "landowner", "1198070023456789"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "E3 - Delete valuation request with factors (409 Conflict)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/valuation-requests/delete/fbf68038-f9b8-450f-90e0-c3d38ee5903b",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuation-requests", "delete", "fbf68038-f9b8-450f-90e0-c3d38ee5903b"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "E3 - Delete valuation factor (200 OK)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/valuation-factors/delete/00000000-0000-0000-0000-000000000000",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuation-factors", "delete", "00000000-0000-0000-0000-000000000000"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Part F",
+      "item": [
+        {
+          "name": "F1 - Valuation requests per status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/valuation-requests/stats/by-status",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuation-requests", "stats", "by-status"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "F2 - Valuer is absent (cancel-day)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/valuation-requests/cancel-day?valuerId=f2dcdb95-a64b-4715-86ea-72a403fd777b&date=2026-10-20",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuation-requests", "cancel-day"],
+              "query": [
+                {
+                  "key": "valuerId",
+                  "value": "f2dcdb95-a64b-4715-86ea-72a403fd777b"
+                },
+                {
+                  "key": "date",
+                  "value": "2026-10-20"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Bonus",
+      "item": [
+        {
+          "name": "Bonus 1 - Dashboard Summary",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/dashboard/summary",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "dashboard", "summary"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Bonus 2 - Valuation requests page by page",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/valuation-requests/page?page=0&size=5&sort=requestDate,desc",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "valuation-requests", "page"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "5"
+                },
+                {
+                  "key": "sort",
+                  "value": "requestDate,desc"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
