@@ -20,5 +20,7 @@ The Automated Land Valuation System is a Spring Boot web service designed to man
 - PostgreSQL
 - Maven
 - Postman
+- <img width="1212" height="866" alt="image" src="https://github.com/user-attachments/assets/fc240622-7fe5-4ca3-843f-ef52dfe4a362" />
+
 
 <p align="center">Thank you, this is a project for education purpose.</p>
